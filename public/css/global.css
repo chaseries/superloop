@@ -1,0 +1,1361 @@
+/* CSS */
+
+/* TOC --------------------------------------------------------------- 
+*					   Profile
+*                          Bones
+*                              a. The basics	
+*                          Header
+*                              a. The basics
+*                              b. !Auth()         //Profile specs
+*                              c. Auth()::check   //need to be removed
+*                          Body                   //& put elsewhere
+*                              a. The basics
+*
+*                       String
+*						    Bones
+*                               a. The basics
+*
+---------------------------------------------------------------------*/
+
+/* BONES ------------------------------------------------------------- 
+*                          a. The basics
+---------------------------------------------------------------------*/
+
+html {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 1px;
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	font-family: 'Raleway', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	color: #18b2c8;
+	text-decoration: none;
+	letter-spacing: 0px;
+}
+
+h2 {
+	font-family: 'Raleway', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-weight: lighter;
+	font-size: 22px;
+	margin-top: 16px;
+	margin-left: 25px;
+}
+
+
+ul {
+	list-style-type: none;
+}
+
+i {
+	display: inline-block;
+}
+
+.contentWrap {
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.action {
+	display: inline-block;
+}
+
+.action span {
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	color: #505050;	
+	/*letter-spacing: 0px;*/
+}
+
+.action ul {
+	position: absolute							 	!important;
+	width: 300px									!important;
+	box-shadow: 3px 3px 15px rgba(0, 0, 0, .5)		!important;
+	z-index: 100          							!important;
+	padding: 0										!important;
+	cursor: pointer 								!important;
+}
+
+.action ul:before {
+	content: '';
+	position: absolute;
+	width: 0; 
+	height: 0; 
+	margin-top: -4px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+
+.action ul li {
+	font-family: 'Raleway', sans-serif				!important;
+	position: relative 							 	!important;
+	display: list-item 								!important;
+	font-size: 14px 								!important;
+	font-weight: 400                                !important;
+	color: #6b6b6b                                  !important;
+	-webkit-font-smoothing: subpixel-antialiased 	!important;
+	-webkit-text-stroke: 0.35px 					!important;
+	margin-left: 0px 								!important;
+	letter-spacing: 0px 							!important;
+	padding: 6px 0px 6px 30px;
+	line-height: 24px;
+
+}
+
+.action ul li:first-of-type {
+	padding-top: 11px;
+}
+
+.action ul li:last-of-type {
+	padding-bottom: 11px;
+}
+
+.action ul li:hover {
+	background: #272727;
+}
+
+.action ul li img {
+	position: absolute;
+	margin-left: -20px;
+	margin-top: 6px;
+}
+
+.icon-pencil {
+	font-size: 14px;
+	color: #ccc;
+	font-weight: lighter;
+	cursor: pointer;
+}
+
+.icon-pencil:hover {
+	color: #0bc1d2;
+}
+
+
+
+/* HEADER ------------------------------------------------------------ 
+*                          a. The basics
+---------------------------------------------------------------------*/
+
+
+
+.header {
+	position: relative;
+	background-color: #18b2c8;
+	background-color: #23d7e7;
+	background-color: #17ccdd;
+	/*background-color: #000;*/
+	width: 100%;
+	height: 45px;
+	top: 0;
+}
+
+.headerWrap {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 45px;
+	margin: 0 auto;
+}
+
+.header .utilites {
+	display: none;
+}
+
+.header .utilities a {
+	font-size: 18px;
+	color: #106773;
+	text-decoration: none;
+	text-shadow: 0px 1px rgba(255, 255, 255, .5);
+}
+
+.header .utilities span a {
+	font-size: 16px;
+}
+
+.header .logoHeaderNoAuth {
+	margin: 10px 0px 0px 25px; /* Position static so search bar will fall against it naturally */
+	display: none;	
+}
+
+.header .logoHeader {  /* Rules specified by class because header will also contain another image */
+	margin: 10px 0px 0px 10px; /* Position static so search bar will fall against it naturally */
+	display: inline-block;
+}
+
+.header button {
+	position: absolute;
+	background: none;
+	color: #00daee;
+	border: none;
+}
+
+.header button:hover {
+	color: #15ebff;
+}
+
+.header button:active {
+	color: #106773;
+	text-shadow: 0px 1px rgba(255, 255, 255, .4);
+}
+
+.header button:focus {
+	outline: none;
+}
+
+.header ::-webkit-input-placeholder {
+	font-size: 14px;
+	font-weight: lighter;
+	font-style: italic;
+	color: #00daee;
+}
+
+.header input:focus::-webkit-input-placeholder {
+	color: #18b2c8;
+}
+
+.header ::-moz-placeholder {
+	font-size: 14px;
+	font-weight: lighter;
+	font-style: italic;
+	color:#5bebff;
+} /* Firefox 19+ */
+
+.header input:focus::-moz-placeholder {
+	color: #0077aa;
+} /* Firefox 19+ */
+
+.header :-ms-input-placeholder {
+	font-size: 14px;
+	font-weight: lighter;
+	font-style: italic;
+	color: #00daee;
+} /* IE */
+
+.header input:-moz-placeholder {
+	font-size: 14px;
+	font-weight: lighter;
+	font-style: italic;
+	color: #5bebff;
+}
+
+.icon-reorder {
+	position: absolute;
+	font-size: 26px;
+	text-shadow: 0px 1px rgba(255, 255, 255, .25);
+	color: #106773;
+	top: 8px;
+	right: 10px;
+	float: right;
+}
+
+@media screen and (min-width: 400px) {
+
+	.header .utilities {
+		display: inline-block;
+	}
+
+	.header .utilites a {
+	}
+
+	.icon-reorder {
+		display: none;
+	}
+}
+
+/* HEADER ------------------------------------------------------------ 
+*                          b. !Auth()
+---------------------------------------------------------------------*/
+
+
+
+.headerLoginWrap {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.headerLoginWrap button {
+	width: 54px;
+	height: 45px;
+}
+
+.headerLoginWrap button:focus {
+	color: #00a5bd;
+	background-color: #00daee;
+}
+
+.header input[type='text'] {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	letter-spacing: 1px;
+	font-size: 14px;
+	/*color: #fff;*/
+	color: #4ce6ff;
+	background: none;
+	width: calc(47% - 28px);
+	width: -webkit-calc(47% - 28px);
+	height: 43px;
+	border-top: none;
+	border-right: 1px solid #00daee;
+	border-bottom: none;
+	border-left: none;
+	padding-right: 1%;
+	padding-left: 2%;
+	margin: 0;
+}
+
+.header input[type='text']:focus {
+	color: #00a5bd;
+	/*text-shadow: 0px 1px rgba(255, 255, 255, .5);*/
+	outline: none;
+	background-color: #00daee;
+	transition: .2s;
+}
+
+.header input[type='password'] {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	font-size: 14px;
+	color: #4ce6ff;
+	background: none;
+	width: calc(47% - 28px);
+	width: -webkit-calc(47% - 28px);
+	height: 43px;
+	border-top: none;
+	border-right: 1px solid #00daee;
+	border-bottom: none;
+	border-left: none;
+	padding-right: 1%;
+	padding-left: 2%;
+	margin: 0px 0px 0px -6px;
+}
+
+.header input[type='password']:focus {
+	color: #00a5bd;
+	/*text-shadow: 0px 1px rgba(255, 255, 255, .5);*/
+	outline: none;
+	background-color: #00daee;
+	transition: .2s;
+}
+
+@media screen and (min-width: 600px) {
+	.headerLoginWrap {
+		width: 65%;
+	}
+	
+	.header input[type='text'] {
+		border-left: 1px solid #00daee;
+	}
+}
+
+
+/* HEADER ------------------------------------------------------------ 
+*                          c. Auth()::check
+---------------------------------------------------------------------*/
+
+/* PLACEHOLDER -- DELETE */
+
+.profilePicHeaderPlaceholder {
+	width: 45px;
+	height: 45px;
+	display: none;
+	margin-right: 10px;
+	margin-left: 10px;
+	background: url('../images/face.jpg');
+}
+
+.header .searchWrap {
+	position: absolute;
+	display: none;
+}
+
+.header input[type='search'] {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	color: #4ce6ff;
+	letter-spacing: 1px;
+	font-size: 14px;
+	background: none;
+	height: 43px;
+	border-top: none;
+	border-right: 1px solid #26e5f7;
+	border-bottom: none;
+	border-left: 1px solid #26e5f7;
+	padding-left: 35px;
+	padding-right: 10px;
+}
+
+.header input[type='search']:focus {
+	color: #00a5bd;
+	outline: none;
+	background-color: #1ed5e6;
+	border: none;
+}
+
+.header .searchButton {
+	position: absolute;
+	width: 33px;
+	height: 45px;
+	margin-left: -33px;
+}
+
+.header .icon-search {
+	position: absolute;
+	margin-left: 8px;
+	margin-top: 13px;
+	color: #00daee;
+}
+
+.header .searchButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.header .utilities {
+	height: 45px;
+	padding-right: 10px;
+	display: inline-block;
+	overflow: hidden;
+	float: right;
+}
+
+.header .utilities .action ul {
+	display: none;
+	margin: 40px 0px 0px -278px;
+	background-color: #212121;
+}
+
+.header .utilities .action ul:before {
+	margin-left: 280px;
+	border-bottom: 4px solid #212121;
+}
+
+
+.header .name {
+	display: inline-block;
+	max-width: 190px;
+	position: relative;
+	color: #106773; /* It's not likely there will be any spans other than the user's name in the header; this should be fine. */
+	text-shadow: 0px 1px rgba(255, 255, 255, .4);
+	font-weight: 500;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	top: 10px;
+	overflow: hidden;
+}
+
+.header .utilitiesIcons {
+	position: relative;
+	top: 10px;
+	margin-right: 5px;
+}
+
+@media screen and (min-width: 600px) {
+
+	.header .logoHeader {
+		display: inline-block;
+	}
+
+}
+
+@media screen and (min-width: 800px) {
+	.headerLoginWrap {
+		width: 520px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+
+	.header .searchWrap {
+		display: inline-block;
+		margin-left: 148px;
+		width: 175px;
+		-webkit-transition: .25s;
+		transition: .25s;
+	}
+
+	.header input[type='search'] {
+		width: 130px;
+	}
+
+}
+
+@media screen and (min-width: 1000px) {
+
+	.header .searchWrap {
+ 		width: 250px;
+	}
+
+	.header input[type='search'] {
+		width: 205px;
+	}
+
+}
+
+@media screen and (min-width: 1450px) {
+	.header input[type='password'] {
+		border-right: 1px solid #00daee;
+	}
+}
+
+/* BODY -------------------------------------------------------------- 
+*                          a. The basics
+---------------------------------------------------------------------*/
+
+.content {
+	background-color: #000;
+	width: 100%;
+	height: calc(100% - 45px);
+	height: -webkit-calc(100% - 45px);
+}
+
+.contentSignUp {
+	color: white;
+	background: url('../images/bgSignup.jpg') no-repeat center center fixed; 
+	width: 100%;
+	height: calc(100% - 45px);
+	height: -webkit-calc(100% - 45px);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.wrapSignUp {
+	position: absolute;
+	right: 40px;
+	top: 200px;
+}
+
+.contentSignUp input[type='text'] {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	letter-spacing: 1px;
+	color: #fff;
+	background: none;
+	width: 300px;
+	height: 35px;
+	padding-right: 10px;
+	padding-left: 11px;
+	border: 1px solid rgba(255, 255, 255, .5);
+	display: block;
+	margin-bottom: 15px;
+}
+
+.contentSignUp input[type='text']:focus {
+	border: 1px solid rgba(255, 255, 255, 1);
+	outline: none;
+	border: 1px solid rgba(255, 255, 255, 0);
+	background-color: rgba(255, 255, 255, .25);
+}
+
+.contentSignUp input[type='password'] {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	letter-spacing: 1px;
+	color: #fff;
+	background: none;
+	width: 300px;
+	height: 35px;
+	padding-right: 10px;
+	padding-left: 11px;
+	border: 1px solid rgba(255, 255, 255, .5);
+}
+
+.contentSignUp input[type='password']:focus {
+	border: 1px solid rgba(255, 255, 255, 1);
+	outline: none
+}
+
+.contentSignUp select {
+	position: relative;
+	width: 98px;
+	padding-left: 5px;
+	margin: 15px 10px 0px 0px;
+	z-index: 100;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	.contentSignUp select {
+		-webkit-appearance: none;
+		background: none;
+		width: 97px;
+		height: 35px;
+		color: rgba(255, 255, 255, .5);
+		border: 1px solid rgba(255, 255, 255, .5);
+		border-radius: 0px;
+		outline: none;
+		padding-left: 10px;
+		margin: 15px 11px 0px 0px;
+		display: inline-block;
+	}
+}
+
+.contentSignUp select:hover {
+	cursor: pointer;
+}
+
+.contentSignUp select:focus {
+	border: 1px solid #fff;
+	outline: none;
+}
+
+.contentSignUpNabla {
+	font-size: 12px;
+	color: rgba(255, 255, 255, .5);
+	position: absolute;
+	margin-top: 24px;
+	margin-left: 75px;
+	z-index: 0;
+}
+
+.contentSignUp label {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	letter-spacing: 2px;
+	color: rgba(255, 255, 255, .5);
+}
+
+.contentSignUp label:hover {
+	color: #fff;
+}
+
+.contentSignUpGenderWrap {
+	width: 98px;
+	height: 35px;
+	padding: 20px 0px 0px 9px;
+	display: inline-block;
+}
+
+.contentSignUp input[type='submit'] {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	letter-spacing: 1px;
+	color: rgba(255, 255, 255, .5);
+	background: none;
+	width: 99px;
+	height: 39px;
+	border: 1px solid rgba(255, 255, 255, .5);
+	margin-top: 15px;
+}
+
+.contentSignUp input[type='submit']:hover {
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.contentSignUp input[type='submit']:focus {
+	border: 1px solid #fff;
+	outline: none;
+}
+
+.contentSignUp input[type='submit']:active {
+	border: 1px solid #222;
+	color: #222;
+}
+
+.contentSignUp ::-webkit-input-placeholder {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: lighter;
+	font-size: 16px;
+	font-weight: lighter;
+	color: rgba(255, 255, 255, .5);
+}
+
+.contentSignUp ::-moz-placeholder {
+	font-size: 16px;
+	color: #fff;
+} /* Firefox 19+ */
+
+.contentSignUp :-ms-input-placeholder {
+	font-size: 16px;
+	font-weight: lighter;
+	color: #fff;
+} /* IE */
+
+.contentSignUp input:-moz-placeholder {
+	font-size: 16px;
+	color: #fff;
+}
+
+button::-moz-focus-inner /* Because every browser has its own flavor of stupid. */
+{
+    border: 0;
+    padding: 0;
+}
+
+select::-moz-inner /* Because every browser has its own flavor of stupid. */
+{
+    border: 0;
+    padding: 0;
+}
+
+
+
+/* BODY -------------------------------------------------------------- 
+*                          c. Auth::check()
+---------------------------------------------------------------------*/
+
+.coverPhoto {
+  background: url('../images/cover.png'); 
+  height: 320px;
+}
+
+.namePlateProfile {
+	width: 100%;
+	height: 50px;
+	background-color: #18b2c8;
+	background-color: #2ed4ea;
+	background-color: #17ccdd;
+	padding: 0;
+	margin: 0;
+	margin-top: -50px;
+}
+
+.namePlateProfile h2 {
+	font-family: 'Raleway', 'Myriad Pro', helvetica, sans-serif;
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: 0px;
+	font-size: 22px;
+	padding: 12px 0px 0px 20px;
+	margin: 0;
+}
+
+.defaultPicProfile {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.defaultPicProfile img {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.defaultPicStripeProfile {
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	background-color: rgba(0, 237, 255, .6);
+	margin-bottom: 3px;
+	bottom: 0;
+}
+
+/*.basicActions ul {
+	margin: 0;
+	padding: 20px 0px 0px 20px;
+}
+
+.basicActions li {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #b7b7b7;
+  list-style-type: none;
+  letter-spacing: 0px;
+  line-height: 24px;
+}*/
+
+.basicActions {
+	position: relative;
+	height: 40px;
+	margin-top: -1px;
+	border-top: 1px solid #222;
+	box-shadow: inset 0px 1px #404040;
+	background-color: #292929;
+}
+
+.basicActions .action {
+	margin-left: 12px;
+	padding: 10px 0px 0px 13px;
+	cursor: pointer;
+}
+
+.basicActions .action span:hover {
+	color: #606060;
+	-moz-transition: .25s;
+	-webkit-transition: .25s;
+	transition: .25s;
+}
+
+.basicActions .action img {
+	margin-bottom: -1px;
+}
+
+.basicActions .action ul {
+	display: none;
+	margin: 25px 0px 0px 0px;
+	left: 0px;
+	background-color: #212121;
+}
+
+.basicActions .action ul:before {
+	margin-left: 200px;
+	border-bottom: 4px solid #212121;
+}
+
+.viewMoreWrapProfile {
+	width: 100%;
+	height: 40px;
+	background-color: #555;
+}
+
+.viewMoreWrapProfile:hover {
+	cursor: pointer;
+	background-color: #666;
+}
+
+.viewMoreWrapProfile h3 {
+	font-family: 'Raleway', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-weight: lighter;
+	font-size: 13px;
+	color: #999;
+	text-align: center;
+	padding-top: 13px;
+	margin: 0;
+}
+
+.wallProfile {
+	position: relative;
+	width: 100%;
+	min-height: 400px;
+	margin: 0 auto;
+	margin-top: 340px;
+}
+
+.wallProfile input[type='text'] {
+	width: 80%;
+	height: 30px;
+	margin-top: 50px;
+	padding-right: 2%;
+	padding-left: 2%;
+	border: none;
+	background-color: #c7f1ff;
+}
+
+.defaultPicProfile {
+	vertical-align: bottom;
+}
+
+.aboutProfile {
+	position: relative;
+	font-size: 12px;
+	color: #666;
+	width: 100%;
+	min-height: 200px;
+	max-height: 290px;
+}
+
+.aboutProfile div {
+	position: absolute;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #333;
+	letter-spacing: 0px;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	bottom: 0px;
+	padding-top: 20px;
+	background-color: #fff;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.aboutProfile pre {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 400;
+	font-size: 13px;
+	padding: 0px 15px 0px 15px;
+}
+
+.aboutProfile div:hover {
+	color: #666;
+}
+
+.aboutProfile .icon-caret-right {
+	font-size: 15px;
+	color: #17ccdd;
+	vertical-align: -1px;
+	padding-left: 7px;
+	cursor: pointer;
+}
+
+.aboutProfile .icon-pencil {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.aboutProfile h3 {
+	font-family: 'Raleway', helvetica, arial, sans-serif;
+	font-size: 15px;
+	color: #3887be;
+	letter-spacing: 0px;
+	font-weight: 400;
+	padding: 0px 0px 0px 15px;
+}
+
+.aboutProfile p {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.friendsProfile {
+	min-height: 200px;
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.friendsOverlayProfile {
+	position: absolute;
+	color: #fff;
+	font-weight: 600;
+	font-size: 25px;
+	letter-spacing: 0px;
+	height: 200px;
+	width: 300px;
+	opacity: 0;
+}
+
+.friendsOverlayProfile:hover {
+	display: block;
+	background-color: rgba(11, 193, 210, .75);
+	cursor: pointer;
+	opacity: 1;
+}
+
+.friendsOverlayProfile span {
+	position: absolute;
+	top: 82px;
+	left: 60px;
+}
+
+.photosProfile {
+	min-height: 200px;
+	width: 100%;
+	vertical-align: bottom;
+}
+
+
+.photosOverlayProfile {
+	position: absolute;
+	color: #fff;
+	font-weight: 600;
+	font-size: 25px;
+	letter-spacing: 0px;
+	height: 200px;
+	width: 300px;
+	opacity: 0;
+}
+
+.photosOverlayProfile:hover {
+	display: block;
+	background-color: rgba(11, 193, 210, .75);
+	cursor: pointer;
+	opacity: 1;
+}
+
+.photosOverlayProfile span {
+	position: absolute;
+	top: 82px;
+	left: 60px;
+}
+
+
+.mapProfile {
+	position: relative;
+	width: 100%;
+	height: 90px;
+	background-color: #222;
+ 	vertical-align: bottom;
+ 	cursor: pointer;
+}
+
+.mapProfile ul {
+	padding: 0px 0px 0px 20px;
+	margin: 8px 0px 0px 0px;
+}
+
+.mapProfile ul li {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 0px;
+	color: #5d5d5d;
+	padding-top: 5px;
+}
+
+.mapProfile .icon-map-marker {
+	font-size: 40px;
+	color: #666;
+	position: absolute;
+	left: 290px;
+	top: 20px;
+}
+
+.mapProfile img {
+	position: absolute;
+	top: 0;
+	opacity: 0;
+}
+
+.mapProfile img:hover {
+	opacity: 1;
+	-webkit-transition: .25s;
+	-moz-transition: .25s;
+	transition: .25s;
+}
+
+.commentProfile {
+	position: relative;
+	width: 585px;
+	height: 145px;
+	border: 1px solid #d1d1d1;
+	background-color: #f3f3f3;
+	box-shadow: 0px 1px 4px #ddd;
+}
+
+.commentProfile textarea {
+	width: 555px;
+	height: 55px;
+	padding: 15px;
+	background-color: #fff;
+	resize: none;
+	border: none;
+	outline: none;
+}
+
+.commentProfile textarea:active {
+	outline: none;
+}
+
+.commentProfile img {
+	margin-left: 20px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#attachmentIconVideo {
+	padding-bottom: 1px;
+}
+
+.commentProfile button {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: #fff;
+	font-weight: 600;
+	font-size: 12px;
+	width: 80px;
+	height: 40px;
+	border: none;
+	background-color: #3887be;
+}
+
+.commentProfile button:hover {
+	background-color: #2ed4ea;
+}
+
+.commentProfile button:active {
+	background-color: #3887be;
+	box-shadow: 0px 1px #fff, inset 0px 3px 7px rgba(0, 0, 0, .3);
+}
+
+@media screen and (min-width: 400px) {
+
+	.coverPhoto {
+		min-width: 1200px;
+	}
+
+	.namePlateProfile {
+		width: 300px;
+	}
+
+	.defaultPicProfile {
+		width: 300px;
+		display: inline-block;
+	}
+
+	.viewMoreWrapProfile {
+		display: none;
+	}
+
+	.basicInfoWrapProfile {
+		float: left;
+		margin: 0;
+		padding: 0;
+	}
+
+	.aboutProfile {
+		width: 300px;
+		height: 400px;
+		margin: 0;
+		padding: 0;
+		background-color: #fff;
+		float: left;
+		box-shadow: 0px 1px 4px rgba(0, 0, 0, .12);
+	}
+
+	.friendsProfile {
+		width: 300px;
+		height: 200px;
+		float: left;
+	}
+
+	.photosProfile {
+		width: 300px;
+		height: 200px;
+		float: left;
+	}
+
+	.mapProfile {
+		width: 600px;
+		float: left;
+		box-shadow: 0px 1px 4px rgba(0, 0, 0, .3);
+	}
+
+	.timelineStructure {
+		display: block;
+		position: absolute;
+		margin-top: 0px;
+		margin-left: 600px;
+		width: 1px;
+		background-color: #9d8b6e;
+		min-height: 600px;
+		box-shadow: 1px 0px #fff, -1px 0px #dfdfdf;
+	}
+}
+
+.sidebar {
+	width: 250px;
+	margin: 140px 0px 0px 20px;
+}
+
+.sidebar ul {
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar li {
+	font-family: 'Raleway', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	color: #494949;
+	letter-spacing: 0px;
+	padding-bottom: 16px;
+}
+
+
+/* STRING:BONES ------------------------------------------------------ 
+*                          a. The basics
+---------------------------------------------------------------------*/
+
+.titleString h2 {
+	font-family: 'Raleway', sans-serif;
+	color: #202020;
+	font-weight: 700;
+	letter-spacing: 0px;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.titleString li {
+	color: #505050;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 0px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 24px;
+	margin-left: 20px;
+}
+
+.storySortActions {
+	max-width: 400px;
+	margin: 0;
+	padding: 0;
+}
+
+.storySortActions ul {
+	list-style-type: none;
+	margin: 10px 0px 30px -40px;
+	text-align: left;
+}
+
+.storySortActions li {
+	font-family: 'Raleway', helvetica, sans-serif;
+	font-size: 13px;
+	color: #505050;
+	font-weight: 600;
+	letter-spacing: 0px;
+	display: inline;
+	padding: 0;
+	text-align: left;
+}
+
+.story {
+	display: table;
+	margin-top: 20px;
+	min-height: 60px;
+	vertical-align: middle;
+}
+
+.story h3 {
+	margin: 7px 0px 0px 0px;
+}
+
+.story h3 a {
+	font-size: 19px;
+	font-weight: 600;
+}
+/*
+.story h3 a:visited {
+	color: #999;
+}*/
+
+.story h3 a:hover {
+	color: #1ae1ff;
+}
+
+.story h4 {
+	font-size: 14px;
+	color: #505050;
+	letter-spacing: 0px;
+	font-weight: 500;
+	margin: 5px 0px 0px 0px;
+}
+
+.story h4 a {
+	font-weight: 500;
+}
+
+.story h4 a:hover {
+	color: #1ae1ff;
+}
+
+.votingWrap {
+	position: relative;
+	text-align: center;
+	width: 46px;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.votingWrap span {
+	color: #999;
+	font-weight: 600;
+}
+
+.upvote {
+	width: 14px;
+	height: 14px;
+	margin: 0px 0px 9px 16px;
+	background: url('../images/upvote.png');
+	cursor: pointer;
+}
+
+.upvote:hover {
+	background: url('../images/upvoteHover.png');
+}
+
+.downvote {
+	width: 12px;
+	height: 12px;
+	margin: 9px 0px 0px 17px;
+	background: url('../images/downvote.png');
+	cursor: pointer;
+}
+
+.downvote:hover {
+	width: 12px;
+	height: 12px;
+	background: url('../images/downvoteHover.png');
+}
+
+.infoWrap {
+	display: table-cell;
+	max-width: 980px;
+	padding-left: 20px;
+}
+
+.imageWrap {
+	display: table-cell;
+	width: 100px;
+	height: 100px;
+	padding-left: 15px;
+}
+
+.story img {
+	vertical-align: bottom;
+	position: absolute;
+}
+
+.addStory {
+	height: 0px;
+	border: 1px solid red;
+
+	background-color: #505050;
+	transition: .25s;
+}
+
+
+.editForm {
+	display: none;
+}
+
+.tableLabel {
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	color: #2ed4ea;
+	letter-spacing: 0px;
+	width: 150px;
+	height: 25px;
+}
+
+.tableText {
+	width: 200px;
+}
+
+.editableText {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size: 14px;
+	font-weight: 400;
+	color: #666;
+}
+
+.editableTable button {
+	font-size: 14px;
+	color: #ccc;
+	display: none;
+	margin-left: -8px;
+	background: none;
+	border: none;
+}
+
+.editableTable button:hover {
+	color: #2ed4ea;
+}
+
+.editableTable .icon-pencil {
+	font-size: 13px;
+}

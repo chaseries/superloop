@@ -33,4 +33,9 @@
 		"preferred-install": "dist"
 	},
 	"minimum-stability": "dev"
+	
+    "require": {
+        "gigablah/sphinxphp": "2.0.*"
+    }
+}
 }
